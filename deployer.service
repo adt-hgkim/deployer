@@ -1,0 +1,11 @@
+[Unit]
+Description=Deployer
+
+[Service]
+Type=simple
+ExecStart=/home/pi/go/bin/deployer release
+Restart=on-failure
+RestartSec=1s
+
+[install]
+WantedBy=multi-user.target
