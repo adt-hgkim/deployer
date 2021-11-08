@@ -10,6 +10,10 @@ project-path> go run main.go
 proejct-path> go run main.go [full-path-to-project]
 ```
 
+connect with localhost:8080
+
+http://localhost:8080
+
 ## Install and start with system unit
 
 1. Install deployer project
@@ -18,16 +22,20 @@ project-path> go install
 ```
 
 2. Edit **deployer.service** file
+
+Original
 ```text
-ExecStart=/GO-BIN-PATH/deployer /PROJECT-PATH
+ExecStart=/GOBIN/deployer /PROJECT-PATH
 ```
+
+Example
 ```text
 ExecStart=/home/pi/go/bin/deployer /home/pi/deployer
 ```
  
 3. Copy system unit
 ```shell
-> sudo cp ./deployer.service /etc/systemd/system/deployer.serive
+project-path> sudo cp ./deployer.service /etc/systemd/system/deployer.serive
 ```
 
 4. Start system unit
@@ -39,3 +47,8 @@ ExecStart=/home/pi/go/bin/deployer /home/pi/deployer
 ```shell
 > sudo systemctl enable deployer.service
 ```
+
+6. connect with localhost:8080
+
+
+http://localhost:8080
