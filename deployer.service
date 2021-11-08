@@ -3,7 +3,7 @@ Description=Deployer
 
 [Service]
 Type=simple
-ExecStart=/home/pi/go/bin/deployer release
+ExecStart=/GO-BIN-PATH/deployer /PROJECT-PATH
 Restart=on-failure
 RestartSec=1s
 

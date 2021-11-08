@@ -9,13 +9,11 @@ func main() {
 	relativePath := "./public"
 	pattern := "./public/**/index.html"
 
-	argsWithoutProg := os.Args[1:]
-	for i := 0; i < len(argsWithoutProg); i++ {
-		if argsWithoutProg[i] == "release" {
-			gin.SetMode(gin.ReleaseMode)
-			relativePath = "/home/pi/deployer/public"
-			pattern = "/home/pi/deployer/public/**/index.html"
-		}
+	args := os.Args[1:]
+	if len(args) > 0 {
+		gin.SetMode(gin.ReleaseMode)
+		relativePath = args[0] + "/public"
+		pattern = args[0] + "/public/**/index.html"
 	}
 
 	router := gin.Default()
